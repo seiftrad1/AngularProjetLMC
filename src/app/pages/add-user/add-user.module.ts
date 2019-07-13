@@ -1,24 +1,26 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
-import {UserComponent} from './user.component';
+import {AddUserComponent} from './add-user.component';
+import {UserService} from '../user/user.service';
 
-import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     imports: [
         HttpClientModule,
         CommonModule,
+        FormsModule,
 
     ],
     declarations: [
-        UserComponent,
+      AddUserComponent,
     ],
     providers: [
-        UserService,
+      UserService,
     ],
 })
-export class UserModule { }
+export class AddUserModule { }

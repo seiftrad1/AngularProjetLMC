@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { UserComponent } from './user/user.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,10 @@ const routes: Routes = [{
     {
       path: 'user',
       component: UserComponent,
+    },
+    {
+      path: 'add-user',
+      component: AddUserComponent,
     },
     {
       path: 'layout',
