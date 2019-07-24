@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../user/user.model';
-import { Http, Headers, Response } from '@angular/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import 'rxjs/add/operator/map';
 const TOKEN_KEY = 'AuthToken';
@@ -19,17 +18,17 @@ export class AuthService {
   jwtToken = null;
   private host: string = 'http://localhost:8088';
 
-  setLoggedin() {
+  static setLoggedin() {
     window.sessionStorage.removeItem('loggedin');
     window.sessionStorage.setItem('loggedin', 'true');
   }
 
-  setLoggedOut() {
+  static setLoggedOut() {
     window.sessionStorage.removeItem('loggedin');
     window.sessionStorage.setItem('loggedin', 'false');
   }
 
-  getLoggedin() {
+  static getLoggedin() {
     return window.sessionStorage.getItem('loggedin');
   }
 
@@ -38,7 +37,7 @@ export class AuthService {
   }
 
 
-  getCurrentUser() {
+  static getCurrentUser() {
     const token = window.sessionStorage.getItem(TOKEN_KEY);
     const jwtHelper = new JwtHelperService();
         return jwtHelper.decodeToken(token);
@@ -53,7 +52,7 @@ export class AuthService {
         if (this.jwtToken == null) {
             this.loadToken();
         }
-        this.users = this.getCurrentUser();
+        this.users = AuthService.getCurrentUser();
         return this.http.get(this.host + '/user/username/' + this.users.sub ,  httpOptions);
 
     }
