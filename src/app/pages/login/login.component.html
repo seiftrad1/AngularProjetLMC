@@ -1,0 +1,65 @@
+<div class="page sub-page">
+  <!--*********************************************************************************************************-->
+  <!--************ HERO ***************************************************************************************-->
+  <!--*********************************************************************************************************-->
+  <section class="hero">
+    <div class="hero-wrapper">
+      <div class="page-title">
+        <div class="container">
+          <img src="../../../assets/img/logo.png">
+        </div>
+        <!--end container-->
+      </div>
+      <!--============ End Page Title =====================================================================-->
+      <div class="background"></div>
+      <!--end background-->
+    </div>
+    <!--end hero-wrapper-->
+  </section>
+  <!--end hero-->
+  <section class="content">
+    <section class="block">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <form (ngSubmit)="login()"  [hidden]="loggedIn" class="form clearfix">
+              <div class="form-group">
+                <label for="email" class="col-form-label required">Email</label>
+                <input name="email" type="email" [(ngModel)]="username" class="form-control" id="email" placeholder="Your Email" required>
+              </div>
+              <!--end form-group-->
+              <div class="form-group">
+                <label for="password" class="col-form-label required">Mot de passe</label>
+                <input name="password" [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="Password" required>
+              </div>
+              <!--end form-group-->
+              <div class="d-flex justify-content-between align-items-baseline">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </div>
+            </form>
+            <hr>
+
+          </div>
+          <!--end col-md-6-->
+        </div>
+        <!--end row-->
+      </div>
+      <!--end container-->
+    </section>
+    <!--end block-->
+  </section>
+  <!--end content-->
+  <!--*********************************************************************************************************-->
+  <!--************ FOOTER *************************************************************************************-->
+  <!--*********************************************************************************************************-->
+  <section class="footer">
+    <div class="background">
+      <div class="background-image original-size">
+        <img src="../../../assets/img/footer-background-icons.jpg" alt="">
+      </div>
+    </div>
+  </section>
+  <!--end footer-->
+</div>
+<!--end page-->
+

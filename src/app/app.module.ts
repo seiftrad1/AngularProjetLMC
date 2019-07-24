@@ -11,6 +11,9 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NbAlertModule } from '@nebular/theme';
+
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -23,12 +26,14 @@ import {
 
 @NgModule({
   declarations: [AppComponent],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-
+    FormsModule,
+    NbAlertModule,
     ThemeModule.forRoot(),
 
     NbSidebarModule.forRoot(),

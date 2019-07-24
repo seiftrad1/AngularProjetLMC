@@ -9,6 +9,7 @@
         "multiline": "always",
         "singleline": "never"
       }
+
     ],
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -36,7 +37,7 @@
     "member-access": false,
     "no-arg": true,
     "no-console": [
-      true,
+      false,
       "debug",
       "log",
       "time",
