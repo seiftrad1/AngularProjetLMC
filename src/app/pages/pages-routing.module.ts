@@ -7,7 +7,6 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [{
   path: '',
@@ -28,10 +27,6 @@ const routes: Routes = [{
     {
       path: 'add-user',
       component: AddUserComponent,
-    },
-    {
-      path: 'login',
-      component: LoginComponent,
     },
     {
       path: 'layout',

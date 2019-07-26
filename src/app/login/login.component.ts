@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { AuthService } from '../service/auth.service';
-import { TokenStorage } from '../service/token.storage';
+import { AuthService } from '../pages/service/auth.service';
+import { TokenStorage } from '../pages/service/token.storage';
 
 @Component({
   selector: 'ngx-login',
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.authService.getUserAllData().subscribe(
           data => {
             this.user = data;
-            sessionStorage.setItem('username', this.user.username);
+            sessionStorage.setItem('id', this.user.username);
             this.router.navigate(['/pages/user']);
 
           },
@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
     );
 
   }
-
   ngOnInit() {
 
   }

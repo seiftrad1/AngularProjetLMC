@@ -18,17 +18,17 @@ export class AuthService {
   jwtToken = null;
   private host: string = 'http://localhost:8088';
 
-  static setLoggedin() {
+   setLoggedin() {
     window.sessionStorage.removeItem('loggedin');
     window.sessionStorage.setItem('loggedin', 'true');
   }
 
-  static setLoggedOut() {
+   setLoggedOut() {
     window.sessionStorage.removeItem('loggedin');
     window.sessionStorage.setItem('loggedin', 'false');
   }
 
-  static getLoggedin() {
+   static getLoggedin() {
     return window.sessionStorage.getItem('loggedin');
   }
 
