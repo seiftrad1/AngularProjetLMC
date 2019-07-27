@@ -25,7 +25,7 @@ export class ProjetService {
   }
 
   public createProjet(projet) {
-    this.user = window.sessionStorage.getItem('id');
+    this.user = window.localStorage.getItem('id');
     return this.http.post<Projet>(this.userUrl + this.user, projet, this.httpOptions);
   }
 }

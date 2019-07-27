@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
-    this.username = window.localStorage.getItem('id');
+    this.username = window.localStorage.getItem('username');
 
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
@@ -96,6 +96,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   onLogout() {
     window.localStorage.removeItem('id');
+    window.localStorage.removeItem('username');
     this.router.navigate(['/auth/login']);
   }
 }

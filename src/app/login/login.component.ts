@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
           data => {
             this.user = data;
             localStorage.setItem('id', this.user.id);
+            localStorage.setItem('username', this.user.username);
             this.router.navigate(['/pages/user']);
 
           },
