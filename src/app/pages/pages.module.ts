@@ -7,6 +7,14 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { UserModule } from './user/user.module';
+import { AddUserModule } from './add-user/add-user.module';
+import { ProjetComponent } from './projet/projet.component';
+import { TaskComponent } from './task/task.component';
+import { NbAlertModule } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
+import { NbCheckboxModule } from '@nebular/theme';
+import { NbIconModule } from '@nebular/theme';
 
 @NgModule({
   imports: [
@@ -16,9 +24,17 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    UserModule,
+    AddUserModule,
+    NbAlertModule,
+    FormsModule,
+    NbCheckboxModule,
+    NbIconModule,
   ],
   declarations: [
     PagesComponent,
+    ProjetComponent,
+    TaskComponent,
   ],
 })
 export class PagesModule {

@@ -5,6 +5,7 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
-
+  username: string;
   themes = [
     {
       value: 'default',
@@ -45,11 +46,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+               private router: Router ) {
   }
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
+    this.username = window.localStorage.getItem('username');
 
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
@@ -90,5 +93,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+  onLogout() {
+    window.localStorage.removeItem('id');
+    window.localStorage.removeItem('username');
+    this.router.navigate(['/auth/login']);
   }
 }

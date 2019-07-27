@@ -11,6 +11,10 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NbAlertModule } from '@nebular/theme';
+import { LoginComponent } from './login/login.component';
+
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,15 +24,20 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-
+import { NbCheckboxModule } from '@nebular/theme';
+import { NbIconModule } from '@nebular/theme';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-
+    FormsModule,
+    NbAlertModule,
+    NbCheckboxModule,
+    NbIconModule,
     ThemeModule.forRoot(),
 
     NbSidebarModule.forRoot(),

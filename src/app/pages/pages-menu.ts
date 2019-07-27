@@ -8,9 +8,23 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'IoT Dashboard',
+    title: 'user',
     icon: 'home-outline',
-    link: '/pages/iot-dashboard',
+    link: '/pages/user',
+    children: [
+      {
+        title: 'add user',
+        link: '/pages/add-user',
+      },
+      {
+        title: 'user',
+        link: '/pages/user',
+      },
+      {
+        title: 'projet',
+        link: '/pages/projet',
+      },
+    ],
   },
   {
     title: 'FEATURES',
