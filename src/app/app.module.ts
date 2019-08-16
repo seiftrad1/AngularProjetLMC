@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NbAlertModule } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
+import {UserService} from './pages/user/user.service';
 
 import {
   NbChatModule,
@@ -52,6 +53,7 @@ import { RegisterComponent } from './register/register.component';
     }),
     CoreModule.forRoot(),
   ],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

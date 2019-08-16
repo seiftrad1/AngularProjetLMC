@@ -23,7 +23,7 @@ export class UserService {
   }
 
   public createUser(user) {
-    return this.http.post<User>(this.userUrl, user, this.httpOptions);
+    return this.http.post<User>(this.userUrl + '/add', user, this.httpOptions);
   }
 
   public getUser(id) {
