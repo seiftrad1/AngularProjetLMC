@@ -8,6 +8,7 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ProjetComponent } from './projet/projet.component';
+import { ListProjetsComponent } from './list-projets/list-projets.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,6 +33,10 @@ const routes: Routes = [{
     {
       path: 'projet',
       component: ProjetComponent,
+    },
+    {
+      path: 'list-projets',
+      component: ListProjetsComponent,
     },
     {
       path: 'layout',

@@ -1,20 +1,22 @@
 <div class="col-md-6">
   <div class="card">
     <div class="card-header">
-      <strong>Horizontal</strong> Form
+      <strong>Add a new project</strong>
     </div>
     <div class="card-body">
-      <form action="" method="post" class="form-horizontal">
+      <form action="" method="post" class="form-horizontal" #form="ngForm">
         <div class="form-group row">
-          <label class="col-md-3 col-form-label" for="nomService">Nom du service</label>
+          <label class="col-md-3 col-form-label" for="nomService">Project name</label>
           <div class="col-md-9">
-            <input [(ngModel)]="projet.domain" placeholder="nom du pole" name="nomService" class="form-control" id="nomService">
+            <input [(ngModel)]="projet.domain" placeholder="Project name" name="nomService" class="form-control" id="nomService" required>
           </div>
         </div>
+
       </form>
     </div>
     <div class="card-footer">
-      <button type="submit"  class="btn btn-sm btn-primary" (click)="createPole()"><i class="fa fa-dot-circle-o"></i> Submit</button>
+      <button type="submit"  class="btn btn-sm btn-primary"  [disabled]="!form.valid"
+              (click)="createPole()"><i class="fa fa-dot-circle-o"></i> Submit</button>
       <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
     </div>
   </div>

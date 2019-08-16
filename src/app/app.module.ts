@@ -26,8 +26,9 @@ import {
 } from '@nebular/theme';
 import { NbCheckboxModule } from '@nebular/theme';
 import { NbIconModule } from '@nebular/theme';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
 
   imports: [
     BrowserModule,

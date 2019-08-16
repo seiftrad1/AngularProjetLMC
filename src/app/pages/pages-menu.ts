@@ -8,7 +8,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'user',
+    title: 'Projet',
     icon: 'home-outline',
     link: '/pages/user',
     children: [
@@ -17,12 +17,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/add-user',
       },
       {
-        title: 'user',
-        link: '/pages/user',
+        title: 'Add Project',
+        link: '/pages/projet',
       },
       {
-        title: 'projet',
-        link: '/pages/projet',
+        title: 'List Projects',
+        link: '/pages/list-projets',
       },
     ],
   },

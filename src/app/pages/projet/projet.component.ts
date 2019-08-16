@@ -20,6 +20,8 @@ export class ProjetComponent {
     this.poleService.createProjet(this.projet)
       .subscribe(data => {
         alert('Project created successfully.');
+        this.router.navigate(['/pages/list-projets']);
+
       });
 
   }

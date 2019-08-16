@@ -14,9 +14,11 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   user: any;
+  private errorMessage: string;
+
   constructor( private authService: AuthService, private router: Router, private token: TokenStorage) { }
 
-  login(): void {
+  login(formData: any): void {
 
     this.authService.sendCredential(this.username, this.password).subscribe(
       data => {
@@ -24,10 +26,7 @@ export class LoginComponent implements OnInit {
         console.log(this.token.getToken());
 
       },
-      error => {
-        console.log(error);
-
-      },
+      formData.form.controls['email'].markAsTouched(),
       () => {
         this.authService.getUserAllData().subscribe(
           data => {
