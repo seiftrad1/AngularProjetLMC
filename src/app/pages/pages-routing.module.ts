@@ -9,6 +9,8 @@ import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ProjetComponent } from './projet/projet.component';
 import { ListProjetsComponent } from './list-projets/list-projets.component';
+import { UpdateProjetComponent } from './list-projets/update-projet/update-projet.component';
+import { TaskComponent } from './task/task.component';
 
 const routes: Routes = [{
   path: '',
@@ -37,6 +39,14 @@ const routes: Routes = [{
     {
       path: 'list-projets',
       component: ListProjetsComponent,
+    },
+    {
+      path: 'update-projet/:id',
+      component: UpdateProjetComponent,
+    },
+    {
+      path: 'TaskComponent',
+      component: TaskComponent,
     },
     {
       path: 'layout',

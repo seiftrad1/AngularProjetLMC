@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { NbCheckboxModule } from '@nebular/theme';
 import { NbIconModule } from '@nebular/theme';
 import { ListProjetsComponent } from './list-projets/list-projets.component';
+import { UpdateProjetComponent } from './list-projets/update-projet/update-projet.component';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { ListProjetsComponent } from './list-projets/list-projets.component';
     ProjetComponent,
     TaskComponent,
     ListProjetsComponent,
+    UpdateProjetComponent,
   ],
 })
 export class PagesModule {

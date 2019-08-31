@@ -13,26 +13,31 @@ export class LoginComponent implements OnInit {
   private credential = {'username': '', 'password' : ''};
   username: string;
   password: string;
+  showErrorMessage: boolean;
+  string;
   user: any;
   private errorMessage: string;
 
   constructor( private authService: AuthService, private router: Router, private token: TokenStorage) { }
 
   login(formData: any): void {
+    this.showErrorMessage = false;
 
     this.authService.sendCredential(this.username, this.password).subscribe(
       data => {
         this.token.saveToken(data.token);
         console.log(this.token.getToken());
 
+      }, (error) => {
+        this.showErrorMessage = true;
       },
-      formData.form.controls['email'].markAsTouched(),
       () => {
         this.authService.getUserAllData().subscribe(
           data => {
             this.user = data;
             localStorage.setItem('id', this.user.id);
             localStorage.setItem('username', this.user.username);
+            localStorage.setItem('photo', this.user.photo);
             this.router.navigate(['/pages/user']);
 
           },

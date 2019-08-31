@@ -13,10 +13,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/user',
     children: [
       {
-        title: 'add user',
-        link: '/pages/add-user',
-      },
-      {
         title: 'Add Project',
         link: '/pages/projet',
       },

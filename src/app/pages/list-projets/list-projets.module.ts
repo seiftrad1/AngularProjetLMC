@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import {ListProjetsComponent} from './list-projets.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { UpdateProjetComponent } from './update-projet/update-projet.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   declarations: [
     ListProjetsComponent,
+    UpdateProjetComponent,
   ],
 })
 export class ListProjetsModule { }

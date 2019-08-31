@@ -65,4 +65,8 @@ export class AuthService {
     check() {
         return this.http.get('http://localhost:8088/check');
     }
+  public requestPwd(email) {
+    return this.http.get<boolean>('http://localhost:8088/pwd/email/' + email);
+  }
+
 }

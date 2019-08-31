@@ -18,13 +18,12 @@
     </nb-action>
     <nb-action class="control-item" icon="email-outline"></nb-action>
     <nb-action class="control-item" icon="bell-outline"></nb-action>
-    <nb-action><input type="button" (click)="onLogout()" value="Logout" /></nb-action>
+    <nb-action><input type="button" (click)="onLogout()" value="Logout" /> </nb-action>
+
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
-      <nb-user [nbContextMenu]="userMenu"
-               [onlyPicture]="userPictureOnly"
-               [name]="username"
-               [picture]="user?.picture">
-      </nb-user>
+      <img src="http://localhost:8088/cv/files/{{photo}} " style=" height: 2.5rem;
+    width: 2.5rem;">
+      {{username}}
     </nb-action>
   </nb-actions>
 </div>

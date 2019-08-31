@@ -28,5 +28,15 @@ export class ProjetService {
     this.user = window.localStorage.getItem('id');
     return this.http.post<Projet>(this.userUrl + this.user, projet, this.httpOptions);
   }
+  public deletePole(pole) {
+    return this.http.delete<Projet>(this.userUrl + 'delete/' + pole.id, this.httpOptions );
+  }
+  public updatePole(pole) {
+    return this.http.put<Projet>(this.userUrl + 'update' ,  pole, this.httpOptions );
+  }
+  public getPole(id) {
+    return this.http.get<Projet>(this.userUrl + id, this.httpOptions);
+  }
+
 }
 

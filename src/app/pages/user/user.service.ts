@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest, HttpEvent } from '@angular/common/http';
 import { User } from './user.model';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
@@ -28,5 +29,17 @@ export class UserService {
 
   public getUser(id) {
     return this.http.get<User>(this.userUrl + id, this.httpOptions);
+  }
+  pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
+    const formdata: FormData = new FormData();
+
+    formdata.append('file', file);
+
+    const req = new HttpRequest('POST', 'http://localhost:8088/cv/post', formdata, {
+      reportProgress: true,
+      responseType: 'text'
+    });
+
+    return this.http.request(req);
   }
 }

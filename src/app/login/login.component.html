@@ -3,7 +3,9 @@
   <h1 id="title" class="title">Login</h1>
   <p class="sub-title">Hello! Log in with your email.</p>
   <!--end hero-->
-
+  <div *ngIf="showErrorMessage">
+    <h1>Invalid username and password Please try again</h1>
+  </div>
   <div class="form-control-group">
             <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" id="loginForm" [hidden]="chey" class="form clearfix">
 
@@ -27,4 +29,7 @@
 
   </div>
 
+  <section class="another-action" aria-label="Register">
+    Don't have an account? <a class="text-link" routerLink="/auth/register">Register</a>
+  </section>
 </div>

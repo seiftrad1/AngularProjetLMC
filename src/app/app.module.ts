@@ -28,8 +28,10 @@ import {
 import { NbCheckboxModule } from '@nebular/theme';
 import { NbIconModule } from '@nebular/theme';
 import { RegisterComponent } from './register/register.component';
+import { RequestPWDComponent } from './login/request-pwd/request-pwd.component';
+import { ChangePWDComponent } from './login/change-pwd/change-pwd.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, RequestPWDComponent, ChangePWDComponent],
 
   imports: [
     BrowserModule,
